@@ -1,4 +1,4 @@
-from lat_lng import *
+from lat_lng1 import *
 
 import requests
 import json
@@ -21,7 +21,7 @@ with open( "my_address_components.csv", "w") as f:
 
 		def get_address():
 			try:
-				raw_address = requests.get('http://maps.googleapis.com/maps/api/geocode/json?latlng=' + ll)
+				raw_address = requests.get('http://maps.googleapis.com/maps/api/geocode/json?latlng=' + ll )
 				full_address = raw_address.json()
 				my_full_address = (full_address['results'][0]['formatted_address'])
 				output.writerow([i, my_full_address])
